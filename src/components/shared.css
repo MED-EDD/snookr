@@ -1,0 +1,95 @@
+/* Shared UI tokens extracted from component styles */
+
+.ui-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  padding: 12px 22px;
+  min-width: 180px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 18px;
+  width: clamp(180px, 40vw, 360px);
+}
+
+.ui-btn .ripple {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.ui-btn:active .ripple {
+  animation: ripple 420ms ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 10%, transparent 40%);
+    opacity: 1;
+  }
+
+  100% {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.0) 100%);
+    opacity: 0;
+  }
+}
+
+.ui-btn-primary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(10, 80, 40, 0.12);
+}
+
+.ui-btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ui-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(20, 120, 60, 0.18);
+}
+
+.ui-btn:active {
+  transform: scale(0.98);
+}
+
+.powerbar-wrapper {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  max-width: 70vw;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.powerbar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.powerbar-fill {
+  height: 100%;
+  transition: width 80ms linear;
+  box-shadow: 0 0 18px rgba(250, 200, 0, 0.04);
+}
+
+.powerbar-wrapper.charging .powerbar-fill {
+  transition: width 60ms linear;
+  box-shadow: 0 0 20px rgba(250, 200, 0, 0.2);
+}

@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/GameCanvas.tsx","./src/game/Ball.ts","./src/game/GameEngine.ts","./src/game/PoolTable.ts","./src/physics/Physics.ts","./src/rules/GameRules.ts","./src/ui/Menu.tsx"],"version":"5.9.3"}
